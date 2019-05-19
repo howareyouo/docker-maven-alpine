@@ -16,7 +16,7 @@ docker run -it \
   -v /var/run/docker.sock:/var/run/docker.sock \  # mapping host's docker communitation socket
   -v $HOME/.m2:/root/.m2 \                        # storing maven dependencies in host machine and reuse it
   -v $HOME/.ssh/:/root/.ssh \                     # mapping host's ssh secrets for ssh/scp without password
-  backflow/maven-alpine
+  backflow/docker-maven-alpine
 ```
 
     
