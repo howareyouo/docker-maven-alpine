@@ -9,7 +9,7 @@ Base on the official
  - `maven version` : `3.6.1`
 
 ## How to use (running docker instructions)
-Since this image only contains the docker cli binary, it needs to work with the host docker engine, you need to mount the `/var/run/docker.sock` to it:
+Since this image only contains the docker cli binary, it needs to work with the host`s docker engine, you need to mount the `/var/run/docker.sock` to it:
 ```
 # start container
 docker run -it \
