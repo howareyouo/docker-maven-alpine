@@ -8,7 +8,7 @@ ARG SHA=b4880fb7a3d81edd190a029440cdf17f308621af68475a4fe976296e71ff4a4b546dd6d8
 
 RUN mkdir -p /usr/share/maven /usr/share/maven/ref \
   && curl -fsSL -o /tmp/apache-maven.tar.gz https://apache.osuosl.org/maven/maven-3/${MAVEN_VERSION}/binaries/apache-maven-${MAVEN_VERSION}-bin.tar.gz \
-  && echo "${SHA} /tmp/apache-maven.tar.gz" | sha512sum -c - \
+  && echo "${SHA}  /tmp/apache-maven.tar.gz" | sha512sum -c - \
   && tar -xzf /tmp/apache-maven.tar.gz -C /usr/share/maven --strip-components=1 \
   && curl -fsSL -o /tmp/docker.tgz https://download.docker.com/linux/static/stable/x86_64/docker-${DOCKER_VERSION}.tgz \
   && tar -xzf /tmp/docker.tgz -C /tmp \
