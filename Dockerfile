@@ -14,8 +14,9 @@ RUN mkdir -p /usr/share/maven /usr/share/maven/ref \
   && curl -fsSL -o /tmp/apache-maven.tar.gz ${BASE_URL}/apache-maven-${MAVEN_VERSION}-bin.tar.gz \
   && echo "${SHA}  /tmp/apache-maven.tar.gz" | sha512sum -c - \
   && tar -xzf /tmp/apache-maven.tar.gz -C /usr/share/maven --strip-components=1 \
-  && curl -SL ${DOCKER_CLI_BINARY_URL} | tar -xz -C /tmp/download \
-  && mv /tmp/download/docker/docker /usr/bin/ \
+  && curl -fsSL -o /tmp/docker.tgz \
+  && tar -xzf /tmp/docker.tgz -C /tmp \
+  && mv /tmp/docker/docker /usr/bin/ \
   && rm -rf /var/cache/apk/* /tmp/*\
   && ln -s /usr/share/maven/bin/mvn /usr/bin/mvn
 
