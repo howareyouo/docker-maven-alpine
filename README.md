@@ -14,7 +14,8 @@ Since this image only contains the docker cli binary, it needs to work with the 
     # start container
     docker run -it \
         -v /var/run/docker.sock:/var/run/docker.sock \    # mapping host's docker communitation socket
-        -v -v $HOME/.m2:/root/.m2 \                       # storing maven dependencies in host machine and reuse it
+        -v $HOME/.m2:/root/.m2 \                          # storing maven dependencies in host machine and reuse it
+        -v $HOME/.ssh/:/root/.ssh \                       # mapping host's ssh secrets for ssh/scp inside child container
         backflow/maven-alpine
 
     
