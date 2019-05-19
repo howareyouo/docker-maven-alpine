@@ -12,10 +12,10 @@ Base on the official
 Since this image only contains the docker cli binary, it needs to work with the host docker engine, you need to mount the `/var/run/docker.sock` to it:
 
     # start container
-    docker run -it \ 
-    -v /var/run/docker.sock:/var/run/docker.sock  # mapping host's communitation socket
-    -v -v $HOME/.m2:/root/.m2 # storing dependencies in host machine and reuse it
-    backflow/maven-alpine
+    docker run -it \
+        -v /var/run/docker.sock:/var/run/docker.sock \    # mapping host's docker communitation socket
+        -v -v $HOME/.m2:/root/.m2 \                       # storing maven dependencies in host machine and reuse it
+        backflow/maven-alpine
 
     
 | **ENTRYPOINT** | **CMD** |
